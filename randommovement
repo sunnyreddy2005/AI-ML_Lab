@@ -1,0 +1,34 @@
+import random
+import time
+
+# Define the starting position
+x, y = 0, 0
+
+# Number of steps the object will take
+steps = 20
+
+# Display the initial position
+print(f"Starting position: ({x}, {y})")
+
+# Loop for a certain number of steps
+for _ in range(steps):
+    # Choose a random direction (up, down, left, or right)
+    direction = random.choice(['up', 'down', 'left', 'right'])
+
+    # Move the object based on the chosen direction
+    if direction == 'up':
+        y += 1
+    elif direction == 'down':
+        y -= 1
+    elif direction == 'left':
+        x -= 1
+    elif direction == 'right':
+        x += 1
+
+    # Print the new position after each move
+    print(f"Moved {direction}. New position: ({x}, {y})")
+
+    # Pause for a short duration to simulate movement over time
+    time.sleep(0.5)
+
+print(f"Final position after {steps} steps: ({x}, {y})")
